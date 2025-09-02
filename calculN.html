@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calcul Nr</title>
+</head>
+
+<body>
+
+  <h3>Calcul de la fréquence de rotation N</h3>
+
+  <p>Cette page permet de calculer la fréquence de rotation N en fraisage, tournage ou perçage en fonction de la vitesse de coupe Vc et le diamètre D.</p>
+
+  <p>Vitesse de coupe Vc (en m/min) : <input type="text" size="5" id="Vc" maxlength="5"></p>
+
+  <p>Diamètre (en mm) : <input type="text" size="5" id="D" maxlength="5"></p>
+
+  <p>
+    <input type="button" onclick="Calcul()" value="Calculer">
+  </p>
+
+  <p>Résultat (en tr/min) : <input type="text" size="10" id="resultat" disabled="disabled"></p>
+
+  <script>
+
+    function Calcul() {
+      Vc = Number(document.getElementById("Vc").value);
+      
+      D = Number(document.getElementById("D").value);
+
+      let N = Math.trunc((Vc*1000)/(3.14*D));
+        document.getElementById("resultat").value = N;
+      }
+      
+  </script>
+
+</body>
+
+</html>
